@@ -1,10 +1,19 @@
 let inventario = [];
 
-function agregarProducto(codigo, nombre, precio){
+function agregarProducto() {
+    let codigo = document.getElementById('codigo').value;
+    let nombre = document.getElementById('nombre').value;
+    let precio = parseFloat(document.getElementById('precio').value);
 
-    for (let i = 0; i < inventario.length; i++){
-        if (inventario[i].codigo === codigo){
-            alert("El codigo de producto ya existe en el inventario."); 
+    // Validación
+    if (!codigo || !nombre || isNaN(precio)) {
+        alert('Por favor, complete todos los campos correctamente.');
+        return;
+    }
+
+    for (let i = 0; i < inventario.length; i++) {
+        if (inventario[i].codigo === codigo) {
+            alert('El código de producto ya existe en el inventario.');
             return;
         }
     }
@@ -16,60 +25,57 @@ function agregarProducto(codigo, nombre, precio){
     };
 
     inventario.push(producto);
-    alert("Producto agregado al inventario.");
+    document.getElementById('result').innerHTML = "Producto agregado al inventario.";
+    
+    // Limpiar campos
+    document.getElementById('codigo').value = '';
+    document.getElementById('nombre').value = '';
+    document.getElementById('precio').value = '';
 
-    console.log("Inventario actualizado:");
-    mostrarInventario();
+    mostrarInventario(); // Opcional, muestra el inventario actualizado
 }
 
+function buscarProducto() {
+    let codigo = document.getElementById('buscarCodigo').value;
 
-function buscarProductoPorCodigo(codigo){
+    let productoEncontrado = buscarProductoPorCodigo(codigo);
+
+    if (productoEncontrado) {
+        document.getElementById('result').innerHTML =
+            `<p>Producto encontrado:</p>
+            <p>Código: ${productoEncontrado.codigo}</p>
+            <p>Nombre: ${productoEncontrado.nombre}</p>
+            <p>Precio: ${productoEncontrado.precio}</p>`;
+    } else {
+        document.getElementById('result').innerHTML = 'Producto no encontrado en el inventario.';
+    }
     
-    for(let i = 0; i < inventario.length; i++){
-        if (inventario[i].codigo === codigo){
-            return inventario[i];
+    // Limpiar campo
+    document.getElementById('buscarCodigo').value = '';
+}
+
+function mostrarInventario() {
+    let resultado = "<h3>Inventario:</h3>";
+
+    if (inventario.length === 0) {
+        resultado += "<p>El inventario está vacío.</p>";
+    } else {
+        for (let i = 0; i < inventario.length; i++) {
+            resultado +=    `<p>Producto ${i + 1}:<br>
+                            Código: ${inventario[i].codigo}<br>
+                            Nombre: ${inventario[i].nombre}<br>
+                            Precio: ${inventario[i].precio}</p>`;
         }
     }
 
+    document.getElementById('result').innerHTML = resultado;
+}
+
+function buscarProductoPorCodigo(codigo) {
+    for (let i = 0; i < inventario.length; i++) {
+        if (inventario[i].codigo === codigo) {
+            return inventario[i];
+        }
+    }
     return null;
 }
-
-function mostrarInventario(){
-    console.log("Inventario:");
-    for (let i = 0; i < inventario.length; i++){
-        console.log("Producto:" + (i + 1) + ":");
-        console.log("Codigo:" + inventario[i].codigo);
-        console.log("Nombre:" + inventario[i].nombre);
-        console.log("Precio:" + inventario[i].precio);
-    }
-}
-
-let operacion = prompt("¿Que desea hacer?\n1)Agregar un producto al inventario \n2)Buscar un producto por codigo \n3)Mostrar todo el inventario \n Ingrese 1, 2 o 3 para avanzar.");
-
-if(operacion === "1"){
-    let codigo = prompt("Ingrese el codigo del producto:");
-    let nombre = prompt("Ingrese el nombre del producto:");
-    let precio = parseFloat(prompt("Ingrese el precio del producto:"));
-
-    agregarProducto(codigo, nombre, precio);
-} else if (operacion === "2"){
-    let codigoBuscar = prompt("Ingrese el codigo del producto a buscar:");
-
-    let productoEncontrado = buscarProductoPorCodigo(codigoBuscar);
-
-    if (productoEncontrado){
-        console.log("Producto encontrado:");
-        console.log("Codigo: " + productoEncontrado.codigo);
-        console.log("Nombre: " + productoEncontrado.nombre);
-        console.log("Precio: " + productoEncontrado.precio);
-    } else {
-        alert("Producto no encontrado en el inventario.");
-    }
-} else if (operacion === "3"){
-    mostrarInventario();
-} else {
-    alert("Opcion no valida. Por favor ingrese 1 o 2.")
-}
-
-console.log("Inventario completo:");
-mostrarInventario();
