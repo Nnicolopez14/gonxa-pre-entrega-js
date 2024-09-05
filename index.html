@@ -1,36 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Momentos Viajeros</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Agregar Producto</h2>
-        <label for="codigo">Código:</label>
-        <input type="text" id="codigo" placeholder="Código del producto">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" placeholder="Nombre del producto">
-        <label for="precio">Precio:</label>
-        <input type="number" id="precio" step="0.01" placeholder="Precio del producto">
-        <button onclick="agregarProducto()">Agregar Producto</button>
-    </div>
-
-    <div class="container">
-        <h2>Buscar Producto</h2>
-        <label for="buscarCodigo">Código:</label>
-        <input type="text" id="buscarCodigo" placeholder="Código del producto">
-        <button onclick="buscarProducto()">Buscar Producto</button>
-    </div>
-
-    <div class="container">
-        <h2>Mostrar Inventario</h2>
-        <button onclick="mostrarInventario()">Mostrar Inventario</button>
-    </div>
-
-    <div id="result"></div>
-    <script src="./js/app.js"></script>
+    <header>
+        <h1>Momentos Viajeros</h1>
+        <h2>“Crea recuerdos inolvidables en cada destino”</h2>
+    </header>
+    <main>
+        <section id="search">
+            <input type="text" id="searchInput" placeholder="Buscar destinos...">
+        </section>
+        <section id="sort">
+            <label for="sortSelect">Ordenar por:</label>
+            <select id="sortSelect">
+                <option value="name">Nombre</option>
+                <option value="price">Precio</option>
+            </select>
+        </section>
+        <section id="destinations"></section>
+        <section id="cart">
+            <h2>Tu Carrito</h2>
+            <ul id="cartItems"></ul>
+            <p>Total: $<span id="cartTotal">0</span></p>
+            <button id="checkoutButton">Procesar Compra</button>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
 </body>
 </html>

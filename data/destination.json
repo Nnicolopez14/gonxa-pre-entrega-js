@@ -1,0 +1,46 @@
+{
+    "destinations": [
+        {
+            "id": "1",
+            "name": "París, Francia",
+            "description": "París, también conocida como la Ciudad de la Luz, es la capital de Francia y una de las ciudades más populares en el mundo. La Torre Eiffel, uno de los símbolos más icónicos de la ciudad, atrae a millones de turistas cada año. Conocida por su arquitectura impresionante, sus calles románticas y su rica historia, París se ha ganado el apodo de La Ciudad del Amor.",
+            "image": "../assets/paris.jpg",
+            "price": 1200.00
+        },
+        {
+            "id": "2",
+            "name": "Tokio, Japon",
+            "description": "Tokio, capital del Japón, con sus 14 millones de habitantes se confirma la metrópoli más populosa del país y una de las mayores ciudades del mundo. Su historia se remonta a 1603 cuando Ieyasu Tokugawa estableció el gobierno feudal (el shogunato) y desde entonces goza de un próspero desarrollo. Tokio se identifica como el centro político, económico y cultural de Japón y, en base a la subdivisión administrativa del territorio, se divide en 23 distritos que incluyen 26 ciudades, 5 ciudadelas y 8 aldeas.",
+            "image": "../assets/tokyo.jpg",
+            "price": 1500.00
+        },
+        {
+            "id": "3",
+            "name": "Nueva York, Estados Unidos",
+            "description": "Nueva York, la ciudad que nunca duerme es un centro de cultura y atracción; alberga una gran cantidad de museos sobre arte, fotografía, arquitectura, tecnología, historia natural, televisión y radio, siendo los principales el Museo Metropolitano, el Museo Guggenheim, el Museo de Arte Moderno, Van Courtland house Museum, el Museo de Historia Natural, el Museo del Sexo.",
+            "image": "../assets/nueva-york.jpg",
+            "price": 1800.00
+        },
+        {
+            "id": "4",
+            "name": "Madrid, España",
+            "description": "Capital de España y conocida habitualmente como Villa y Corte, Madrid es la mayor ciudad del país y la segunda de la Unión Europea, con una población de más de 3 millones de habitantes (más de 6 en el área metropolitana).",
+            "image": "../assets/madrid.jpg",
+            "price": 2100.00
+        },
+        {
+            "id": "5",
+            "name": "Berlin, Alemania",
+            "description": "La ciudad de Berlín tiene mucho que ofrecer a cualquiera: al que se interese por el arte y al que se interese por la vida nocturna, al amante de la Historia y al aficionado al deporte, al que guste de la vida en la gran ciudad y al que disfrute de la tranquilidad en la naturaleza…",
+            "image": "../assets/berlin.jpg",
+            "price": 1200.00
+        },
+        {
+            "id": "6",
+            "name": "Roma, Italia",
+            "description": "La ciudad de Roma es la capital de Italia y de la Provincia de Lacio y es una de las capitales con más historia de Europa, además acoge el minúsculo Estado de El Vaticano, que alberga el poder religioso más influyente del mundo.",
+            "image": "../assets/roma.jpg",
+            "price": 1200.00
+        }
+    ]
+}
